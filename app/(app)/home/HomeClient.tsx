@@ -28,7 +28,7 @@ export default function HomePage() {
 
   useEffect(() => {
     Promise.all([
-      productApi.fetchAll().then((res) => res.products).catch(() => []),
+      productApi.fetchFeatured().then((res) => res.products).catch(() => []),
       bannerApi.fetchUrls().then((res) => res.banners.length ? res.banners : [{ image_url: FALLBACK_BANNER }]).catch(() => [{ image_url: FALLBACK_BANNER }]),
       categoryApi.fetchCategories().then((res) => res.categories || []).catch(() => [])
     ]).then(([prodRes, bannerRes, catRes]) => {
@@ -74,7 +74,7 @@ export default function HomePage() {
     });
   }
 
-  const featuredProducts = products.filter(p => p.isFeatured);
+  const featuredProducts = products;
 
   if (loading) {
     return (
