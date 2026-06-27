@@ -101,7 +101,6 @@ export default function ContactUsPage() {
               </div>
             </div>
           </div>
-        </div>
 
           {/* Manager 2 */}
           <div className="card p-6 space-y-4 border border-divider">
@@ -171,7 +170,7 @@ export default function ContactUsPage() {
 
               <div className="pt-2">
                 <a
-                  href="https://maps.google.com"
+                  href="https://share.google/OTcX2TUhHvXXJeicO"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl bg-cream-deep hover:bg-divider border border-divider px-4 py-2.5 text-xs font-bold text-text-primary transition"
