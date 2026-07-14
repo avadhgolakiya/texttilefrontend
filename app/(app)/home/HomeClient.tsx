@@ -91,16 +91,35 @@ export default function HomePage() {
     <div className="space-y-8 px-4 pt-6 lg:space-y-10 lg:px-0 lg:pt-0">
       {/* Unclosable Payment Popup */}
       <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md">
-        <div className="bg-white dark:bg-zinc-900 p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-2 border-red-500/50">
-          <div className="w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-red-600 dark:text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="bg-white dark:bg-zinc-900 p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-2 border-red-500/50 flex flex-col items-center">
+          <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-red-600 dark:text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Payment Required</h2>
-          <p className="text-lg font-medium text-red-600 dark:text-red-400">
-            pela akhu payment cleare karo pachi website chalu thase
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Payment Required</h2>
+          <p className="text-md font-medium text-red-600 dark:text-red-400 mb-6">
+            કૃપા કરીને પહેલાં પૂરેપૂરું પેમેન્ટ કરો, ત્યારબાદ જ વેબસાઇટ શરૂ કરવામાં આવશે.
           </p>
+
+          {/* QR Code Section */}
+          <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-2xl mb-2 w-full border border-gray-200 dark:border-zinc-700">
+            <div className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">
+              Scan to pay with any UPI app
+            </div>
+            
+            <div className="bg-white p-2 rounded-xl inline-block shadow-sm mb-4">
+              {/* Ensure the image is saved as 'payment-qr.jpg' in your 'public' folder */}
+              <img src="/payment-qr.jpg" alt="UPI QR Code" className="w-48 h-48 object-contain rounded-lg" />
+            </div>
+            
+            <div className="text-sm text-gray-800 dark:text-gray-200 font-bold uppercase tracking-wide">
+              TEJ BHARATBHAI CHANCHAD
+            </div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              UPI ID: 9408354563@kotakbank
+            </div>
+          </div>
         </div>
       </div>
       {/* Search Engine Optimization H1 (Google compliance) */}
